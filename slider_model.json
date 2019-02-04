@@ -1,0 +1,88 @@
+{
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "boolean",
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "start_date",
+      "type": "datetime"
+    },
+    {
+      "name": "end_date",
+      "type": "datetime"
+    },
+        {
+      "name": "show_dots",
+      "type": "boolean"
+    },
+     {
+      "name": "infinite",
+      "type": "boolean"
+    },
+    {
+      "name": "speed",
+      "type": "integer"
+    },
+    {
+      "name": "slides_to_show",
+      "type": "integer"
+    },
+    {
+      "name": "adaptive_height",
+      "type": "boolean"
+    },
+    {
+      "name": "fade",
+      "type": "boolean"
+    },
+   {
+      "name": "cssEase",
+      "type": "string"
+    },
+    {
+      "name": "slides_to_scroll",
+      "type": "integer"
+    },
+    {
+      "name": "image_id",
+      "type": "integer"
+    }
+ 
+  ],
+  "foreign_keys": [
+    {
+      "column": "image_id",
+      "references": "id",
+      "on": "images",
+      "onDelete": "cascade"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "image",
+      "type": "belongsTo",
+      "class": "App\\Image"
+    }
+  ],
+
+  "validations": [
+    {
+      "field": "title",
+      "rules": "required|max:100"
+    },
+    {
+      "field": "description",
+      "rules": "required|max:500"
+    }
+  ]
+ 
+}

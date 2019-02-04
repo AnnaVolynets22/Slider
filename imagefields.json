@@ -1,0 +1,49 @@
+{
+  "fields": [
+    {
+      "name": "title",
+      "type": "string"
+    },
+
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "file",
+      "type": "file"
+    },
+    {
+      "name": "slider_id",
+      "type": "integer"
+    }
+
+  ],
+  "foreign_keys": [
+    {
+      "column": "slider_id",
+      "references": "id",
+      "on": "sliders",
+      "onDelete": "cascade"
+    }
+  ],
+  "relationships": [
+    {
+      "name": "slider",
+      "type": "belongsTo",
+      
+      "class": "App\\Slider"
+    }
+  ],
+  
+  "validations": [
+    {
+      "field": "title",
+      "rules": "required|max:100"
+    },
+    {
+      "field": "description",
+      "rules": "max:500"
+    }
+  ]
+}
